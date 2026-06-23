@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/test';
 import { LoginPage } from '../../../pages/login.js';
+
 test('should show error when fields are empty', async ({ page }) => {
   const loginPage = new LoginPage(page);
   await loginPage.goto();
