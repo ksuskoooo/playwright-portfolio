@@ -1,9 +1,12 @@
 // @ts-check
 import { defineConfig, devices } from '@playwright/test';
 import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
-  testDir: path.resolve('playwright-portfolio/tests'),
+  testDir: path.join(__dirname, 'playwright-portfolio', 'tests'),
   
   /* Run tests in files in parallel */
   fullyParallel: true,

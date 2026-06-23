@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "playwright test",
+    "test:ui": "playwright test --ui",
     "test:all-browsers": "playwright test --project=chromium --project=firefox --project=webkit"
   },
   "keywords": [],
