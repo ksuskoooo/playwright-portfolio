@@ -1,5 +1,3 @@
-import { runInThisContext } from 'vm';
-
 export class InventoryPage {
   /** @param {import('@playwright/test').Page} page */
   constructor(page) {
@@ -22,6 +20,4 @@ export class InventoryPage {
   async selectSortOption(optionValue) {
     await this.sortDropdown.selectOption(optionValue);
   }
-
-  
 }
