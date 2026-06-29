@@ -2,6 +2,9 @@ import { test, expect } from '@playwright/test';
 import { CartPage } from '../../../pages/cart.js';
 import { LoginPage } from '../../pages/login.js';
 import { InventoryPage } from '../../pages/inventory.js';
+import { CheckoutCompletePage } from '../../pages/checkout-complete.js';
+import { CheckoutStepOnePage } from '../../pages/checkout-step-one.js';
+import { CheckOutStepTwoPage } from '../../pages/checkout-step-two.js';
 
 test('should show error when checkout fields are empty', async ({ page }) => { 
 
@@ -15,8 +18,10 @@ test('should show error when checkout fields are empty', async ({ page }) => {
   
     const cartPage = new CartPage(page);
     await cartPage.checkoutButton.click();
-    await cartPage.continueButton.click()
 
-    await expect(cartPage.errorMessage).toHaveText('Error: First Name is required')
+    const checkoutStepOnePage = new CheckoutStepOnePage(page);
+    await checkoutStepOnePage.continueButton.click()
+
+    await expect(checkoutStepOnePage.errorMessage).toHaveText('Error: First Name is required')
 
 }) 
