@@ -4,5 +4,6 @@ export class CartPage {
     this.page = page;
     this.checkoutButton = page.getByTestId('checkout');
     this.errorMessage = page.getByTestId('error');
+    this.cartBadge = page.getByTestId('shopping-cart-badge')
   }
 }

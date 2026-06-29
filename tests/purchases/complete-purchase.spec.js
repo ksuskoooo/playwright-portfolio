@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
-import { LoginPage } from '../../../pages/login.js';
-import { InventoryPage } from '../../../pages/inventory.js';
-import { CartPage } from '../../../pages/cart.js';
+import { LoginPage } from '../../pages/login.js';
+import { InventoryPage } from '../../pages/inventory.js';
+import { CartPage } from '../../pages/cart.js';
 import { CheckoutCompletePage } from '../../pages/checkout-complete.js';
 import { CheckoutStepOnePage } from '../../pages/checkout-step-one.js';
 import { CheckOutStepTwoPage } from '../../pages/checkout-step-two.js';

@@ -5,6 +5,7 @@ export class CheckoutStepOnePage {
 this.page = page;
 this.continueButton = page.getByTestId('continue');
 this.finishButton = page.getByTestId('finish');
+this.cancelButton = page.getByTestId('cancel');
 this.firstNameInput = page.getByTestId('firstName');
 this.lastNameInput = page.getByTestId('lastName');
 this.postCodeInput = page.getByTestId('postalCode');
