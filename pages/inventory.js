@@ -7,6 +7,7 @@ export class InventoryPage {
     this.removeJacketButton = page.getByTestId('remove-sauce-labs-fleece-jacket');
     this.sortDropdown = page.locator('.product_sort_container');
     this.firstItemPrice = page.locator('.inventory_item_price').first();
+    this.titleProducts = page.getByTestId('title')
   }
 
   async addJacketToCart() {
