@@ -11,11 +11,11 @@ export class ConsoleSpy {
             }
         })
     }
-    assertNoErrors() {
-        if (this.error.lenght > 0) {
-            console.log('Errors detected', this.error);
+    getErrorsSummary() {
+        if (this.error.length > 0) {
+            return this.error.join('\n❌ ');
         }
-        return this.error.lenght === 0;
-}
+        return '';
+    }
 }
 
