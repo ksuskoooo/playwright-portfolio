@@ -1,21 +1,21 @@
 export class ConsoleSpy {
     constructor(page) {
         this.page = page;
-        this.error = [];
+        this.errors = [];
     }
 
     start() {
-        this.page.on('console',(msg) => {
+        this.page.on('console', (msg) => {
             if (msg.type() === 'error') {
-                this.error.push(msg.text());
+                this.errors.push(msg.text());
             }
-        })
+        });
     }
+
     getErrorsSummary() {
-        if (this.error.length > 0) {
-            return this.error.join('\n❌ ');
+        if (this.errors.length > 0) {
+            return this.errors.join('\n❌ ');
         }
         return '';
     }
 }
-

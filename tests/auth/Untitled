@@ -1,4 +1,3 @@
-
 import { test, expect } from '@playwright/test';
 import { LoginPage } from '../../pages/login.js';
 import { ConsoleSpy } from '../utils/console-spy.js';
@@ -9,15 +8,16 @@ test('test should catch errors from problem_user', async ({ page }) => {
     await loginPage.goto();
     await loginPage.login('standard_user', 'secret_sauce'); 
 
-  
+    // Ждем, пока страница полностью загрузится и сеть затихнет
     await page.waitForLoadState('networkidle');
 
- 
+    // Вот ТЕПЕРЬ включаем шпиона на чистую страницу
     const consoleSpy = new ConsoleSpy(page);
     consoleSpy.start(); 
 
-
+    // Делаем микроклики или просто ждем секунду, чтобы проверить, что новых ошибок нет
     await page.waitForTimeout(1000);
 
+    // Ожидаем честную пустую строку
     expect(consoleSpy.getErrorsSummary()).toBe('');
 });
