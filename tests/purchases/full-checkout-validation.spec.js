@@ -9,29 +9,29 @@ const validationData = [
         testName: 'should show error when FirstName is empty',
         firstName: '',
         lastName: 'Test',
-        postalCode: '12345', // Тут у тебя было postalCode
+        postalCode: '12345', 
         expectedError: 'Error: First Name is required',
     }, 
     {
         testName: 'should show error when LastName is empty',
         firstName: 'John', 
         lastName: '', 
-        postalCode: '12345', // Сделали одинаково во всех объектах
+        postalCode: '12345', 
         expectedError: 'Error: Last Name is required'
     },
     {
         testName: 'should show error when PostalCode is empty',
         firstName: 'John', 
         lastName: 'Doe', 
-        postalCode: '', // Сделали одинаково во всех объектах
+        postalCode: '', 
         expectedError: 'Error: Postal Code is required' 
     }
 ];
 
-// 1. Исправлено: итерируемся по правильному массиву validationData
+
 for (const data of validationData) {
     
-    // 2. Исправлено: имя теста теперь берется динамически из объекта
+  
     test(data.testName, async ({ page }) => {
 
         const loginPage = new LoginPage(page); 
