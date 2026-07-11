@@ -13,8 +13,16 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   reporter: 'html',
   use: {
+    // Basic URL change
+    baseURL: 'https://www.saucedemo.com',
+    
     testIdAttribute: 'data-test',
-    trace: 'on-first-retry',
+    
+    // Trace for failed tests 
+    trace: 'retain-on-failure',
+    
+    // Screenshots
+    screenshot: 'only-on-failure',
   },
   projects: [
     {
