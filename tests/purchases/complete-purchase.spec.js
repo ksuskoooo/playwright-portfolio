@@ -1,4 +1,5 @@
 import { test, expect } from '../utils/fixtures/base-test.js';
+import { faker } from '@faker-js/faker'
 
 test('user can complete the purchase', async ({
   loginPage,
@@ -8,6 +9,10 @@ test('user can complete the purchase', async ({
   checkoutStepTwoPage,
   checkoutCompletePage
 }) => {
+
+  const randomFirstName = faker.person.firstName();
+  const randomLastName = faker.person.lastName();
+  const randomZipCode = faker.location.zipCode('####');
  
   await loginPage.goto();
   await loginPage.login('standard_user', 'secret_sauce');
@@ -19,7 +24,7 @@ test('user can complete the purchase', async ({
 
   await cartPage.checkoutButton.click();
 
-  await checkoutStepOnePage.fillCheckoutForm('John', 'Johnson', '1111');
+  await checkoutStepOnePage.fillCheckoutForm( randomFirstName, randomLastName, randomZipCode);
   await checkoutStepOnePage.continueButton.click()
 
 
