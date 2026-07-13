@@ -5,6 +5,7 @@ import { CartPage } from '../../../pages/cart.js';
 import { CheckoutStepOnePage } from '../../../pages/checkout-step-one.js';
 import { CheckOutStepTwoPage} from '../../../pages/checkout-step-two.js';
 import { CheckoutCompletePage} from '../../../pages/checkout-complete.js';
+import { CheckOutValidationData } from '../data-factories/checkout-data.js';
 
 export const test = base.extend({
     loginPage: async ({ page }, use) => {
@@ -30,6 +31,9 @@ export const test = base.extend({
     checkoutCompletePage: async ({ page }, use) => {
         const checkoutCompletePage = new CheckoutCompletePage(page);
         await use(checkoutCompletePage);
+    }, 
+    invalidCheckOutData: async ({}, use) => {
+        await use(CheckOutValidationData.getInvalidCheckOutData());
     }
 });
 
